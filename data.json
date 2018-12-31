@@ -1,0 +1,200 @@
+{
+  "players": [{
+      "id": 1,
+      "position": "GK",
+      "first_name": "Al",
+      "last_name": "Matveyev",
+      "email": "amatveyev0@studiopress.com",
+      "ranking": 3,
+      "image": "https://randomuser.me/api/portraits/men/67.jpg",
+      "avatar": "https://randomuser.me/api/portraits/thumb/men/67.jpg"
+    },
+    {
+      "id": 2,
+      "position": "LB",
+      "first_name": "Sumner",
+      "last_name": "MacGuigan",
+      "email": "smacguigan1@cyberchimps.com",
+      "ranking": 4,
+      "image": "https://randomuser.me/api/portraits/men/3.jpg",
+      "avatar": "https://randomuser.me/api/portraits/thumb/men/3.jpg"
+    },
+    {
+      "id": 3,
+      "position": "LB",
+      "first_name": "Saul",
+      "last_name": "Ajam",
+      "email": "sajam2@europa.eu",
+      "ranking": 5,
+      "image": "https://randomuser.me/api/portraits/men/39.jpg",
+      "avatar": "https://randomuser.me/api/portraits/thumb/men/39.jpg"
+    },
+    {
+      "id": 4,
+      "position": "LB",
+      "first_name": "Junia",
+      "last_name": "Girdwood",
+      "email": "jgirdwood3@t.co",
+      "ranking": 5,
+      "image": "https://randomuser.me/api/portraits/men/91.jpg",
+      "avatar": "https://randomuser.me/api/portraits/thumb/men/91.jpg"
+    },
+    {
+      "id": 5,
+      "position": "CB",
+      "first_name": "Grant",
+      "last_name": "Winch",
+      "email": "gwinch4@nyu.edu",
+      "ranking": 3,
+      "image": "https://randomuser.me/api/portraits/men/16.jpg",
+      "avatar": "https://randomuser.me/api/portraits/thumb/men/16.jpg"
+    },
+    {
+      "id": 6,
+      "position": "CB",
+      "first_name": "Lura",
+      "last_name": "Bowcher",
+      "email": "lbowcher5@deliciousdays.com",
+      "ranking": 4,
+      "image": "https://randomuser.me/api/portraits/men/89.jpg",
+      "avatar": "https://randomuser.me/api/portraits/thumb/men/89.jpg"
+    },
+    {
+      "id": 7,
+      "position": "CB",
+      "first_name": "Bastien",
+      "last_name": "Saull",
+      "email": "bsaull6@lycos.com",
+      "ranking": 3,
+      "image": "https://randomuser.me/api/portraits/men/66.jpg",
+      "avatar": "https://randomuser.me/api/portraits/thumb/men/66.jpg"
+    },
+    {
+      "id": 8,
+      "position": "RB",
+      "first_name": "Barr",
+      "last_name": "McGiff",
+      "email": "bmcgiff7@reuters.com",
+      "ranking": 5,
+      "image": "https://randomuser.me/api/portraits/men/8.jpg",
+      "avatar": "https://randomuser.me/api/portraits/thumb/men/8.jpg"
+    },
+    {
+      "id": 9,
+      "position": "LW",
+      "first_name": "Fawne",
+      "last_name": "Lamborne",
+      "email": "flamborne8@deliciousdays.com",
+      "ranking": 2,
+      "avatar": "https://randomuser.me/api/portraits/thumb/men/1.jpg"
+    },
+    {
+      "id": 10,
+      "position": "CM",
+      "first_name": "Fredra",
+      "last_name": "Hill",
+      "email": "fhill9@reddit.com",
+      "ranking": 2,
+      "image": "https://randomuser.me/api/portraits/men/12.jpg",
+      "avatar": "https://randomuser.me/api/portraits/thumb/men/12.jpg"
+    },
+    {
+      "id": 11,
+      "position": "CM",
+      "first_name": "Quentin",
+      "last_name": "Oakes",
+      "email": "qoakesa@abc.net.au",
+      "ranking": 5,
+      "image": "https://randomuser.me/api/portraits/men/81.jpg",
+      "avatar": "https://randomuser.me/api/portraits/thumb/men/81.jpg"
+    },
+    {
+      "id": 12,
+      "position": "ST",
+      "first_name": "Jedd",
+      "last_name": "Brounsell",
+      "email": "jbrounsellb@mozilla.com",
+      "ranking": 4,
+      "image": "https://randomuser.me/api/portraits/men/38.jpg",
+      "avatar": "https://randomuser.me/api/portraits/thumb/men/38.jpg"
+    },
+    {
+      "id": 13,
+      "position": "RW",
+      "first_name": "Waylan",
+      "last_name": "Minogue",
+      "email": "wminoguec@wufoo.com",
+      "ranking": 5,
+      "image": "https://randomuser.me/api/portraits/men/21.jpg",
+      "avatar": "https://randomuser.me/api/portraits/thumb/men/21.jpg"
+    },
+    {
+      "id": 14,
+      "position": "ST",
+      "first_name": "Correy",
+      "last_name": "Ruthven",
+      "email": "cruthvend@bigcartel.com",
+      "ranking": 0,
+      "image": "https://randomuser.me/api/portraits/men/62.jpg",
+      "avatar": "https://randomuser.me/api/portraits/thumb/men/62.jpg"
+    }
+  ],
+  "matches": [{
+    "id": 1,
+    "fixture": "Shenstone Vs Brereton",
+    "date": "05/01/2019",
+    "time": "16:00",
+    "venue": "Shenstone",
+    "team": [{
+        "id": 1,
+        "position": "GK",
+        "first_name": "Al",
+        "last_name": "Matveyev",
+        "email": "amatveyev0@studiopress.com",
+        "ranking": 3,
+        "image": "https://randomuser.me/api/portraits/men/67.jpg",
+        "avatar": "https://randomuser.me/api/portraits/thumb/men/67.jpg"
+      },
+      {
+        "id": 2,
+        "position": "LB",
+        "first_name": "Sumner",
+        "last_name": "MacGuigan",
+        "email": "smacguigan1@cyberchimps.com",
+        "ranking": 4,
+        "image": "https://randomuser.me/api/portraits/men/3.jpg",
+        "avatar": "https://randomuser.me/api/portraits/thumb/men/3.jpg"
+      },
+      {
+        "id": 3,
+        "position": "LB",
+        "first_name": "Saul",
+        "last_name": "Ajam",
+        "email": "sajam2@europa.eu",
+        "ranking": 5,
+        "image": "https://randomuser.me/api/portraits/men/39.jpg",
+        "avatar": "https://randomuser.me/api/portraits/thumb/men/39.jpg"
+      },
+      {
+        "id": 4,
+        "position": "LB",
+        "first_name": "Junia",
+        "last_name": "Girdwood",
+        "email": "jgirdwood3@t.co",
+        "ranking": 5,
+        "image": "https://randomuser.me/api/portraits/men/91.jpg",
+        "avatar": "https://randomuser.me/api/portraits/thumb/men/91.jpg"
+      },
+      {
+        "id": 5,
+        "position": "CB",
+        "first_name": "Grant",
+        "last_name": "Winch",
+        "email": "gwinch4@nyu.edu",
+        "ranking": 3,
+        "image": "https://randomuser.me/api/portraits/men/16.jpg",
+        "avatar": "https://randomuser.me/api/portraits/thumb/men/16.jpg"
+      }
+    ]
+  }]
+}
