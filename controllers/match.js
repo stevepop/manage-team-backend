@@ -1,3 +1,4 @@
+const { validationResult } = require('express-validator/check')
 const Match = require('../models/match')
 
 exports.getMatches = async (req, res, next) => {
@@ -35,7 +36,17 @@ exports.getMatch = async (req, res, next) => {
   }
 }
 
-exports.createMatchfixture = async (req, res, next) => {
+exports.createMatchfixture =  (req, res, next) => {
+  const errors = validationResult(req)
+  console.log(errors)
+
+  if (!errors.isEmpty()) {
+    const error = new Error('Validation failed, entered data is incorrect.');
+    error.statusCode = 422
+    error.data = errors.array()
+    throw error
+  }
+  
   const date = req.body.date
   const time = req.body.time
   const venue = req.body.venue
@@ -48,23 +59,51 @@ exports.createMatchfixture = async (req, res, next) => {
     fixture: fixture
   })
 
-  let response = await training.save()
-
-  res.status(200).json({ message: 'Match fixture created', response: response })
+  training.save()
+    .then(result => {
+      res.status(201).json({ 
+        message: 'Match fixture created', 
+        result_id: result._id 
+    })
+    .catch (err => {
+    if (!err.statusCode) {
+      err.statusCode = 500
+    }
+    next(err)
+    })
+  })
 }
 
-exports.updateMatchFixture = async (req, res, next) => {
+exports.updateMatchFixture =  (req, res, next) => {
   const matchId = req.params.id
-  const match = await Match.findById(matchId)
+  Match.findById(matchId)
+    .then(match => {
+      if (!match) {
+        const error = new Error('Could not find match fixture.');
+        error.statusCode = 404;
+        throw error;
+      }
 
-  match.date = req.body.date
-  match.time = req.body.time
-  match.venue = req.body.venue
-  match.fixture = req.body.fixture
+      match.date = req.body.date
+      match.time = req.body.time
+      match.venue = req.body.venue
+      match.fixture = req.body.fixture
+    
+      match.save()
+        .then(result => {
+          res.status(201).json({ 
+            message: 'Match fixture updated', 
+            result_id: result._id 
+        })
+        .catch (err => {
+        if (!err.statusCode) {
+          err.statusCode = 500
+        }
+        next(err)
+        })
 
-  await match.save()
-
-  res.status(200).json({ message: 'Match fixture updated' });
+    })
+  })
 }
 
 exports.updateTeamSelection = async (req, res, next) => {

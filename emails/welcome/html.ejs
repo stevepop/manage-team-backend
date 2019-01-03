@@ -78,8 +78,13 @@
           <!-- start copy -->
           <tr>
             <td bgcolor="#ffffff" align="left" style="padding: 24px; font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 24px;">
-              <h1 style="margin: 0 0 12px; font-size: 32px; font-weight: 400; line-height: 48px;">Welcome, <%= lname %> <%= fname %>,</h1>
-              <p style="margin: 0;">You have successfully logged in to the Shenstone U-18 Fc website.</p>
+              <h1 style="margin: 0 0 12px; font-size: 32px; font-weight: 400; line-height: 48px;">Hi, <%= fname %> <%= lname %>,</h1>
+              <p>A Team member account has been created for you on the Shenstone FC website. With this account, you are now able to 
+               access match fixture details, match reports as well as Team manager ratings.
+               </p>
+              <p style="margin: 0;">You can login with the following credentials.</p>
+             <p style="margin: 0;">Username: <span><%= email %></span></p>
+             <p style="margin: 0;">Password: <span><%= password %></span></p>
             
             </td>
           </tr>

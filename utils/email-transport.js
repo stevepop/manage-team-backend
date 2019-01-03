@@ -1,12 +1,16 @@
+require('dotenv').config()
 const nodemailer = require('nodemailer')
-const sesTransport = require('nodemailer-ses-transport')
 const Email = require('email-templates')
 
-const transporter = nodemailer.createTransport(sesTransport({
-  accessKeyId: process.env.AWS_ACCESS_KEY,
-  secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
-  rateLimit: 5
-}))
+const transporter = nodemailer.createTransport({
+  host: 'smtp.mailtrap.io',
+  port: 2525,
+  secure: false,
+  auth: {
+    user: process.env.MAILTRAP_USERNAME,
+    pass: process.env.MAILTRAP_PASSWORD
+  }
+});
 
 
 const emailSender = new Email({

@@ -1,29 +1,9 @@
 require('dotenv').config()
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
-const nodemailer = require('nodemailer')
-const sesTransport = require('nodemailer-ses-transport')
-const Email = require('email-templates')
+const emailSender = require('../utils/email-transport')
 
 const User = require('../models/user')
-
-const transporter = nodemailer.createTransport(sesTransport({
-  accessKeyId: process.env.AWS_ACCESS_KEY,
-  secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
-  rateLimit: 5
-}))
-
-
-const emailSender = new Email({
-  transport: transporter,
-  send: true,
-  preview: false,
-  views: {
-    options: {
-      extension: 'ejs',
-    }
-  }
-})
 
 exports.postLogin = (req, res, next) => {
   const email = req.body.email
@@ -50,28 +30,6 @@ exports.postLogin = (req, res, next) => {
         { expiresIn: '1h' }
       )
 
-      // transporter.sendMail({
-      //   from: "support@naijaprizes.com",
-      //   to: "stevepop@gmail.com", 
-      //   subject: "Login was successful", 
-      //   text: "You have succssfully logged in to the ShenstoneFC website",
-      //   html:'You have succssfully logged in to the <b>ShenstoneFC website</b>'
-      // }).catch(err => {
-      //   console.log(err)
-      // })
-      emailSender.send({
-        template: 'welcome',
-        message: {
-          from: 'Shenstone FC <support@naijaprizes.com>',
-          to: 'stevepop@gmail.com',
-          subject: 'You have logged in'
-        },
-        locals: {
-          fname: 'Steve',
-          lname: 'Pope'
-        }
-      }).then(() => console.log('email has been sent!'))
-
       return res.status(200).json({token: token, userId: loadedUser._id})
     
     })
@@ -80,6 +38,53 @@ exports.postLogin = (req, res, next) => {
       error.httpStatusCode = 500
       return next(error)
     })
+}
+
+exports.createUser = async (req, res, next) => {
+
+  const first_name = req.body.first_name
+  const last_name = req.body.last_name
+  const email = req.body.email
+  const role = req.body.role
+  const password = 'mypass'
+
+  try {
+    const hashedPw = await bcrypt.hash(password, 12);
+
+    const user = new User({
+      email: email,
+      password: hashedPw,
+      first_name: first_name,
+      last_name: last_name,
+      role: role
+    })
+
+    const result = await user.save()
+    
+    const emailOptions = {
+      template: 'welcome',
+      message: {
+        from: 'support@naijaprizes.com',
+        to: email,
+        subject: 'Welcome To The Team'
+      },
+      locals: {
+        fname: first_name,
+        lname: last_name,
+        email: email,
+        password: password
+      }
+    }
+
+    await emailSender.send(emailOptions)
+
+    res.status(201).json({ message: 'User created!', userId: result._id })
+  } catch (err) {
+    if (!err.statusCode) {
+      err.statusCode = 500;
+    }
+    next(err);
+  }
 }
 
 exports.getUser = (req, res, next) => {
