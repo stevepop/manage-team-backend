@@ -45,8 +45,10 @@ You can either install MongoDB locally, or create an account on Mongo DB atlas (
 Alternatively, you can spin up a Mongo DB Docker container on your local environment and expose relevant ports
 
 ```
-docker run -d -v ~/your-mongo-db-directory -p 27017:27017 mongo
+docker run -v ~/mongodb/data/db --name team-mongo -d mongo --port 27017:27017
 ```
+where 'team-mongo' refers to the name you assign to your container
+
 Make sure that the volume folder already exists before execute the docker command
 
 ### Author
