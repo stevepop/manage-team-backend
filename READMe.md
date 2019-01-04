@@ -35,6 +35,10 @@ MAILTRAP_USERNAME=mailtrap username
 MAILTRAP_PASSWORD=mailtrap password
 
 #MONGO DB
+MONGODB_URI='mongodb://localhost:27017/myteam'
+
+Above URI will be the default if not set.
+
 You can either install MongoDB locally, or create an account on Mongo DB atlas (https://cloud.mongodb.com)
 Alternatively, you can spin up a Mongo DB Docker container on your local environment and expose relevant ports
 

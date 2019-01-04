@@ -1,5 +1,6 @@
 const express = require('express')
-var cors = require('cors')
+const cors = require('cors')
+const path = require('path')
 
 const bodyParser = require('body-parser')
 
@@ -15,8 +16,8 @@ app.set('view engine', 'ejs');
 
 // set up mongoose connection
 const mongoose = require('mongoose')
-//const MONGODB_URI = 'mongodb+srv://stevepop:stevedba1@cluster0-ledd6.mongodb.net/shenstone';
-const MONGODB_URI = 'mongodb://localhost:27017/shenstone'
+const MONGODB_URI = 'mongodb://localhost:27017/myteam'
+
 let mongoDB = process.env.MONGODB_URI || MONGODB_URI
 mongoose.connect(mongoDB, { useNewUrlParser: true });
 mongoose.Promise = global.Promise
