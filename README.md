@@ -52,7 +52,11 @@ where 'team-mongo' refers to the name you assign to your container and '~/dev/mo
 Make sure that the volume folder already exists before execute the docker command
 
 You will need at least one user to login to the application. You can add a test user by logging in to your mongodb console
-- Create a new datase
+```
+docker exec -it team-mongo mongo
+```
+
+- Create a new database
 ```
 use myteam
 ```
