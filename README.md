@@ -5,17 +5,17 @@
 ## Build Setup
 
 
-# Install dependencies
+### Install dependencies
 `$ npm install`
 
-# serve with hot reload at localhost:4000
+### Serve with hot reload at localhost:4000
 `$ npm start`
 
-# Configurartion
+### Configurartion
 
 You will need to create a .env file in the root of the project to configure the following:
 
-## File uploads
+### File uploads
 This project uses the multer package for file uploads. If using AWS S3, you will need to create a bucket on S3 then create a .env file with the following details;
 
 ```
@@ -26,17 +26,17 @@ AWS_REGION=S3 REGION
 AWS_S3_BUCKET=S3 BUCKET
 ```
 
-## JWT
+### JWT
 You will need a secret for JWT authentication
-`JWT_SECRET=`your super secret`
+```JWT_SECRET=`your super secret```
 
-# Email
+### Email
 ```
 MAILTRAP_USERNAME=mailtrap username
 MAILTRAP_PASSWORD=mailtrap password
 ```
 
-#MONGO DB
+### MONGO DB
 `MONGODB_URI='mongodb://localhost:27017/myteam'`
 
 Above URI will be the default if not set.
@@ -49,6 +49,6 @@ docker run -d -v ~/your-mongo-db-directory -p 27017:27017 mongo
 ```
 Make sure that the volume folder already exists before execute the docker command
 
-# Author
+### Author
 Steve Popoola @stevepop
 ````
