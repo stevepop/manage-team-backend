@@ -53,13 +53,16 @@ Make sure that the volume folder already exists before execute the docker comman
 
 You will need at least one user to login to the application. You can add a test user by logging in to your mongodb console
 - Create a new datase
-`use myteam`
+```
+use myteam
+```
 - Add the users collection to the database
-`db.createCollection("users")`
+```
+db.createCollection("users")
+```
 - Insert a new user document
 ```
 db.users.insert({first_name: 'Steve', last_name: 'Popoola', email: 'steve@test.com', role: 'manager', password:'$2y$12$fx4FYLjFdoShIocGsSqACu79SoaajVs.HGor0dxDt.Scc3CazNWvy'})
-WriteResult({ "nInserted" : 1 })
 ```
 Above hashed password is the word'secret'. Don't use this in production!!!
 
